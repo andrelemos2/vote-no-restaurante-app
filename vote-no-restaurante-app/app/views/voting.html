@@ -1,1 +1,39 @@
-<p>{{text}}</p>
+<!-- <p>{{voting}}</p> -->
+
+<div class="panel panel-default">
+    <div class="panel-body">
+      <h3 align="center">Vote no seu restaurante favorito :)</h3>
+      <br />
+      <div class="media" align="center">
+        <div class="media-left">
+          <p>{{voting.first.name}}</p>
+          <a href="#">
+            <img class="media-object" src="{{voting.first.logo}}" alt="Subway">
+          </a>
+          <input type="radio" name="selectedVote" value="" ng-click="vote(voting.first)">
+        </div>
+        <div class="media-right">
+          <p>{{voting.second.name}}</p>
+          <a href="#">
+            <img class="media-object" src="{{voting.second.logo}}" alt="Outback">
+          </a>
+          <input type="radio" name="selectedVote" value="" ng-click="vote(voting.second)">
+        </div>
+      </div>
+      <p>Votos computados: {{votes}}</p>
+    </div>
+</div>
+
+
+
+<!--
+<div class="media">
+  <div class="media-left media-middle">
+    <a href="#">
+      <img class="media-object" src="{{voting.first.logo}}" alt="Subway">
+    </a>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading">Vote no seu restaurante favorito :)</h4>
+  </div>
+</div> -->
