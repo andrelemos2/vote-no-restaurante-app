@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="vote-no-restaurante-app" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My AngularJS App</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation"><a href="#/voting"><h3>Votar</h3></a></li>
+    <li role="presentation"><a href="#/ranking"><h3>Ranking</h3></a></li>
+  </ul>
+
+  <div ng-view></div>
+
+  <div>viniciusluisr@gmail.com</div>
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/underscore/underscore-min.js"></script>
+  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-flash/angular-flash.js"></script>
+  <script src="bower_components/restangular/dist/restangular.min.js"></script>
+  <script src="app.js"></script>
+  <script src="js/controllers/voting.js"></script>
+  <script src="js/controllers/ranking.js"></script>
+  <script src="js/services/voting.js"></script>
+</body>
+</html>
