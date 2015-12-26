@@ -1,15 +1,26 @@
 'use strict';
-
-// Declare app level module which depends on views, and components
-angular.module('vote-no-restaurante-app', [
+var voteNoRestauranteApp = angular.module('vote-no-restaurante-app', [
   'ngRoute',
   'restangular',
-  'flash',
-  'vote-no-restaurante-app.voting',
-  'vote-no-restaurante-app.ranking'
-]).
-config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/voting'});
+  'flash'
+]);
+
+voteNoRestauranteApp.run(['$rootScope', 'Restangular', function ($rootScope, Restangular, $scope) {
+  Restangular.setBaseUrl(contextApi);
+  Restangular.setDefaultHeaders({'Content-Type': 'application/json'});
 }]);
+
+voteNoRestauranteApp.config(function($routeProvider) {
+  $routeProvider.otherwise({redirectTo: '/voting'});
+
+  $routeProvider.when('/voting', {
+    templateUrl: 'views/voting.html',
+    controller: 'VotingController'
+  }),
+  $routeProvider.when('/ranking', {
+    templateUrl: 'views/ranking.html',
+    controller: 'RankingController'
+  });
+});
 
 var contextApi = "http://localhost:8080/v1/"

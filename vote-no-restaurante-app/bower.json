@@ -15,6 +15,7 @@
     "bootstrap": "~3.3.6",
     "jquery": "jQuery#~2.1.4",
     "angular-flash": "angular-flash-messages#~1.2.0",
-    "underscore": "~1.8.3"
+    "underscore": "~1.8.3",
+    "angular-ui-router": "~0.2.15"
   }
 }
