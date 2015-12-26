@@ -1,6 +1,4 @@
-<!-- <p>{{voting}}</p> -->
-
-<div class="panel panel-default">
+<div class="panel panel-default" id="votingForm">
     <div class="panel-body">
       <h3 align="center">Vote no seu restaurante favorito :)</h3>
       <br />
@@ -24,16 +22,22 @@
     </div>
 </div>
 
-
-
-<!--
-<div class="media">
-  <div class="media-left media-middle">
-    <a href="#">
-      <img class="media-object" src="{{voting.first.logo}}" alt="Subway">
-    </a>
-  </div>
-  <div class="media-body">
-    <h4 class="media-heading">Vote no seu restaurante favorito :)</h4>
-  </div>
-</div> -->
+<div class="panel panel-default" id="sendingVotingForm">
+    <div class="panel-body">
+      <h3 align="center">Por favor, informe seus dados:</h3>
+      <br />
+      <form novalidate class="simple-form">
+        <div class="input-group">
+          <span class="input-group-addon" id="basic-addon1">Exemplo: usuario@gmail.com</span>
+          <input type="text" ng-model="user.email" class="form-control" placeholder="Email" aria-describedby="basic-addon1">
+        </div>
+        <br />
+        <div class="input-group">
+          <span class="input-group-addon" id="basic-addon1">Exemplo: Fulano Cigano da Silva</span>
+          <input type="text" ng-model="user.name" class="form-control" placeholder="Nome completo" aria-describedby="basic-addon1">
+        </div>
+        <br />
+        <div align="center"><button type="button" class="btn btn-primary btn-lg" ng-click="showRanking(user)">Consultar ranking</button></div>
+      </form>
+    </div>
+</div>

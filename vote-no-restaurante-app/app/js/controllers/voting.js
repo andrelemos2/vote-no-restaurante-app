@@ -1,13 +1,8 @@
 'use strict';
 voteNoRestauranteApp.controller('VotingController',['$scope','VotingService', function($scope, VotingService) {
     $scope.votes = [];
-    $scope.userRequest = {};
-
-    // userRequest = { "user": {
-    //     "email": "vinicius.x@icloud.com",
-    //     "name": "Vinícius"
-    //   }
-    // }
+    $('#sendingVotingForm').hide();
+    // $('#votingForm').hide();
 
     VotingService.beginVoting().then(function(result) {
     			$scope.voting = result;
@@ -16,7 +11,13 @@ voteNoRestauranteApp.controller('VotingController',['$scope','VotingService', fu
     $scope.vote = function(restaurant) {
       $scope.computingVote(restaurant)
       VotingService.vote(restaurant.id).then(function(result) {
-            $scope.voting = result;
+          if(result.first == null) {
+            $('#votingForm').hide();
+            $('#sendingVotingForm').show();
+          }
+          else {
+              $scope.voting = result;
+          }
       });
     }
 
@@ -27,13 +28,16 @@ voteNoRestauranteApp.controller('VotingController',['$scope','VotingService', fu
           '{ "email": "null", "name": "null"}' +
         '}';
 
-      var text = '{ "employees" : [' +
-          '{ "firstName":"John" , "lastName":"Doe" },' +
-          '{ "firstName":"Anna" , "lastName":"Smith" },' +
-          '{ "firstName":"Peter" , "lastName":"Jones" } ]}';
-
       var vote = JSON.parse(jsonObject);
       $scope.votes.push(vote);
+    }
+
+    $scope.showRanking = function(user) {
+      var userRequest = '{ "user":' +
+        '{ "email": "'+user.email+'", "name": "'+user.name+'" },' +
+        JSON.stringify($scope.votes)
+      '}';
+      console.log(userRequest);
     }
 
 }]);
