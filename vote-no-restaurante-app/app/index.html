@@ -17,6 +17,7 @@
     <li role="presentation"><a href="#/ranking"><h3>Ranking</h3></a></li>
   </ul>
 
+  <div flash-message="4000"></div>
   <div ng-view></div>
 
   <footer>
@@ -32,11 +33,13 @@
   <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
-  <script src="bower_components/angular-flash/angular-flash.js"></script>
+  <script src="bower_components/angular-flash-alert/dist/angular-flash.min.js"></script>
   <script src="bower_components/restangular/dist/restangular.min.js"></script>
   <script src="app.js"></script>
   <script src="js/controllers/voting.js"></script>
   <script src="js/controllers/ranking.js"></script>
   <script src="js/services/voting.js"></script>
+  <script src="js/services/ranking.js"></script>
+  <script src="js/services/user.js"></script>
 </body>
 </html>
