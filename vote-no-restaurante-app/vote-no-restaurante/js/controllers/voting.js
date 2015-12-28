@@ -12,14 +12,16 @@ voteNoRestauranteApp.controller('VotingController',['$scope','Flash', 'VotingSer
     $scope.vote = function(restaurant) {
       $scope.computingVote(restaurant)
       VotingService.vote(restaurant.id).then(function(result) {
-          progress += (100 * 0,25);
+          progress += (100 * 0,10);
           $('#progress-bar').width(progress + '%');
           $('#progress-bar').html(progress + '%');
           if(result.first == null) {
+            var toTotal = (100 - progress);
+            progress += (toTotal - 10);
             setTimeout(function(){
               $('#votingForm').hide();
               $('#sendingVotingForm').show();
-            }, 1000);
+            }, 2000);
           }
           else {
             $scope.voting = result;
