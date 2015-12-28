@@ -23,4 +23,4 @@ voteNoRestauranteApp.config(function($routeProvider) {
   });
 });
 
-var contextApi = "http://vote-no-restaurante-apis.herokuapp.com/v1/"
+var contextApi = "https://vote-no-restaurante-apis.herokuapp.com/v1/"
