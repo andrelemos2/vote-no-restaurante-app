@@ -23,4 +23,4 @@ voteNoRestauranteApp.config(function($routeProvider) {
   });
 });
 
-var contextApi = "http://localhost:7000/v1/"
+var contextApi = "http://vote-no-restaurante-apis.herokuapp.com/v1/"
