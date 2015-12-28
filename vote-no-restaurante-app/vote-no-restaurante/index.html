@@ -9,24 +9,22 @@
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
   <link rel="stylesheet" href="app.css">
 </head>
 <body>
-  <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation"><a href="#/voting"><h3>Votar</h3></a></li>
-    <li role="presentation"><a href="#/ranking"><h3>Ranking</h3></a></li>
+  <ul class="nav nav-tabs">
+    <li role="presentation"><a href="#/voting"><h4>Votar</h4></a></li>
+    <li role="presentation"><a href="#/ranking"><h4>Ranking</h4></a></li>
   </ul>
 
   <div flash-message="3500"></div>
   <div ng-view></div>
 
   <footer>
-    <p align="center">Software Engineer: viniciusluisr@gmail.com</p>
+    <p align="center">&copy; Software Engineer: viniciusluisr@gmail.com</p>
   </footer>
 
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-  -->
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
   <script src="bower_components/underscore/underscore-min.js"></script>
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>

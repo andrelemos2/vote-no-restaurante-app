@@ -1,7 +1,6 @@
 <div class="panel panel-default" id="generalRankingForm">
+    <div class="panel-heading"><h3 align="center">Ranking geral:</h3></div>
     <div class="panel-body">
-      <h3 align="center">Ranking geral:</h3>
-      <br />
       <ul class="list-group" ng-repeat="ranking in generalRanking.rankings">
         <li class="list-group-item">
           <span class="badge">{{ranking.points}}</span>
@@ -12,9 +11,8 @@
 </div>
 
 <div class="panel panel-default" id="rankingSendingVotingForm">
+  <div class="panel-heading"><h3 align="center">Por favor, informe seus dados:</h3></div>
   <div class="panel-body">
-    <h3 align="center">Por favor, informe seus dados:</h3>
-    <br />
     <form novalidate class="simple-form">
       <div class="input-group">
         <span class="input-group-addon" id="basic-addon1">Exemplo: usuario@gmail.com</span>
@@ -32,9 +30,8 @@
 </div>
 
 <div class="panel panel-default" id="personalRankingForm">
+    <div class="panel-heading"><h3 align="center">Ranking pessoal:</h3></div>
     <div class="panel-body">
-      <h3 align="center">Ranking pessoal:</h3>
-      <br />
       <ul class="list-group" ng-repeat="ranking in personalRanking.rankings">
         <li class="list-group-item">
           <span class="badge">{{ranking.points}}</span>

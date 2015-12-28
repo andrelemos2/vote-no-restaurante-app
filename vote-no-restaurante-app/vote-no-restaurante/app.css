@@ -32,3 +32,9 @@
 .hiddenForm {
   display: none;
 }
+
+.restaurant-image {
+  cursor: pointer;
+  width: 25em;
+  height: 20em;
+}

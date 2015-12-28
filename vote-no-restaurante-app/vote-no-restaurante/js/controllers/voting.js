@@ -3,6 +3,7 @@ voteNoRestauranteApp.controller('VotingController',['$scope','Flash', 'VotingSer
     $scope.votes = [];
     $('#sendingVotingForm').hide();
     $('#rankingForm').hide();
+    var progress = 0;
 
     VotingService.beginVoting().then(function(result) {
     			$scope.voting = result;
@@ -11,12 +12,17 @@ voteNoRestauranteApp.controller('VotingController',['$scope','Flash', 'VotingSer
     $scope.vote = function(restaurant) {
       $scope.computingVote(restaurant)
       VotingService.vote(restaurant.id).then(function(result) {
+          progress += (100 * 0,25);
+          $('#progress-bar').width(progress + '%');
+          $('#progress-bar').html(progress + '%');
           if(result.first == null) {
-            $('#votingForm').hide();
-            $('#sendingVotingForm').show();
+            setTimeout(function(){
+              $('#votingForm').hide();
+              $('#sendingVotingForm').show();
+            }, 1000);
           }
           else {
-              $scope.voting = result;
+            $scope.voting = result;
           }
       });
     }
