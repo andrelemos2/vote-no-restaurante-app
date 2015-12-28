@@ -2,23 +2,23 @@
 
 /* https://github.com/angular/protractor/blob/master/docs/toc.md */
 
-describe('my app', function() {
+describe('vote-no-restaurante-app', function() {
 
 
-  it('should automatically redirect to /view1 when location hash/fragment is empty', function() {
+  it('should automatically redirect to /voting when location hash/fragment is empty', function() {
     browser.get('index.html');
     expect(browser.getLocationAbsUrl()).toMatch("/view1");
   });
 
 
-  describe('view1', function() {
+  describe('voting', function() {
 
     beforeEach(function() {
-      browser.get('index.html#/view1');
+      browser.get('index.html#/voting');
     });
 
 
-    it('should render view1 when user navigates to /view1', function() {
+    it('should render view1 when user navigates to /voting', function() {
       expect(element.all(by.css('[ng-view] p')).first().getText()).
         toMatch(/partial for view 1/);
     });
@@ -26,16 +26,16 @@ describe('my app', function() {
   });
 
 
-  describe('view2', function() {
+  describe('ranking', function() {
 
     beforeEach(function() {
-      browser.get('index.html#/view2');
+      browser.get('index.html#/ranking');
     });
 
 
-    it('should render view2 when user navigates to /view2', function() {
+    it('should render ranking when user navigates to /ranking', function() {
       expect(element.all(by.css('[ng-view] p')).first().getText()).
-        toMatch(/partial for view 2/);
+        toMatch(/partial for ranking/);
     });
 
   });

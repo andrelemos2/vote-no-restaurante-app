@@ -5,7 +5,7 @@ var voteNoRestauranteApp = angular.module('vote-no-restaurante-app', [
   'flash'
 ]);
 
-voteNoRestauranteApp.run(['$rootScope', 'Restangular', function ($rootScope, Restangular, $scope) {
+voteNoRestauranteApp.run(['$rootScope', 'Restangular', function ($rootScope, Restangular) {
   Restangular.setBaseUrl(contextApi);
   Restangular.setDefaultHeaders({'Content-Type': 'application/json'});
 }]);
@@ -23,4 +23,4 @@ voteNoRestauranteApp.config(function($routeProvider) {
   });
 });
 
-var contextApi = "http://localhost:8080/v1/"
+var contextApi = "http://localhost:7000/v1/"

@@ -3,7 +3,6 @@ voteNoRestauranteApp.controller('VotingController',['$scope','Flash', 'VotingSer
     $scope.votes = [];
     $('#sendingVotingForm').hide();
     $('#rankingForm').hide();
-    // $('#votingForm').hide();
 
     VotingService.beginVoting().then(function(result) {
     			$scope.voting = result;
@@ -28,7 +27,6 @@ voteNoRestauranteApp.controller('VotingController',['$scope','Flash', 'VotingSer
           '"user":' +
           '{ "email": "null", "name": "null"}' +
         '}';
-
       var vote = JSON.parse(jsonObject);
       $scope.votes.push(vote);
     }
@@ -47,11 +45,9 @@ voteNoRestauranteApp.controller('VotingController',['$scope','Flash', 'VotingSer
       UserService.createUser(userRequest).then(function(userResponse) {
           Flash.create('success', 'Obrigado por votar! :)', 'custom-class');
           RankingService.getRankingByUser(userResponse.id).then(function(result) {
-              console.log(JSON.stringify(result));
               $scope.personalRanking = result;
           });
           RankingService.getGeneralRanking().then(function(result) {
-              console.log(JSON.stringify(result));
               $scope.generalRanking = result;
           });
       });
